@@ -43,16 +43,6 @@ pnpm preview
 # npm run preview
 ```
 
-## What I changed (tagger removal)
-
-This repository previously used `lovable-tagger` which injects a visible badge during development. To remove that badge I:
-
-- Removed the plugin usage in `vite.config.ts` (commented out the import and removed the plugin entry).
-- Removed open graph/twitter meta tags referencing `lovable.dev` from `index.html`.
-- Deleted the `lovable-tagger` devDependency from `package.json`.
-- Ran `npm uninstall lovable-tagger` and `pnpm install` to update lockfiles and remove the package from `node_modules`.
-
-If you want to fully purge historical references from lockfiles, you can delete `package-lock.json` and `pnpm-lock.yaml` and run a fresh `pnpm install`. Note this will re-resolve versions.
 
 ## Troubleshooting
 
@@ -80,13 +70,10 @@ pnpm install
 - Code entry: `src/main.tsx` mounts the React app to `#root` in `index.html`.
 - Vite config: `vite.config.ts` (server runs on port 8080 by default in this repo)
 
-## Next steps
 
-If you want, I can:
-- Start the dev server and share logs here.
-- Re-enable the lovable tagger behind an environment flag instead of removing it.
 - Regenerate lockfiles to remove all historical references to `lovable-tagger`.
 
 ---
+
 
 If you'd like the README expanded with API docs, component descriptions, or deployment instructions, tell me which sections you want and I'll add them.
